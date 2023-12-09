@@ -1,10 +1,12 @@
 \documentclass[UTF8]{ctexart}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{cases}
 \usepackage{cite}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \geometry{a4paper}
+\usepackage{lmodern}%处理字体问题
 
 \title{连续介质力学作业六}
 \author{刘锦坤\\2022013352}
@@ -12,5 +14,29 @@
 
 \begin{document}
 \maketitle
+
+首先作者在关于标号的写法上存在问题，文章中有提到两组新老坐标$x^i$和$x^{i'}$，
+这种标号的使用是不准确且易混淆的，最好是以以$x^i$和$x'^i$表示之。
+事实上这种标号的使用错误通篇皆是，例如$\boldsymbol g'^i$写为了$\boldsymbol g^{i'}$等等，
+这不仅使得读者阅读困难，也让人怀疑原作者本人到底是否理解这样标号的含义。
+
+如果说标号的写法尚可归入笔误的范畴，从原文中的方程(8)开始使用的求和约定就可谓是匪夷所思了。
+\begin{equation}
+    \begin{aligned}
+    &dx^i=\frac{\partial x^i}{\partial x^{i'}}dx^{i'} \triangleq \beta^i_{i'}dx^{i'}\\
+    &dx^{i'}=\frac{\partial x^{i'}}{\partial x^i}dx^i \triangleq \beta^{i'}_{i}dx^i
+    \end{aligned}
+    \tag*{(8)}
+\end{equation}
+这个式子是不容易理解的，一个表达式中竟然出现了3个$i$指标，这是一种什么样的含义呢？
+亦或是作者认为原本区分新旧坐标架的$'$标号在此刻决心与$i$结合而成为一个全新的$i'$标号？
+无从揣测作者的真实想法，但大概可以修改为一个常人尚能理解的形式。
+\begin{equation}
+    \begin{aligned}
+    &dx^i=\frac{\partial x^i}{\partial x'^{j}}dx'^{j}\\
+    &dx^{i'}=\frac{\partial x'^i}{\partial x^j}dx^j
+    \end{aligned}
+    \tag*{(8)}
+\end{equation}
 
 \end{document}
