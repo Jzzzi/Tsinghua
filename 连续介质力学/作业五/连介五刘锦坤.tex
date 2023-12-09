@@ -1,0 +1,128 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{cases}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\geometry{a4paper}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{连续介质力学作业五}
+\author{刘锦坤\\2022013352}
+\date{\today}
+\pagenumbering{arabic}
+
+\begin{document}
+
+\maketitle
+
+\section{第一题}
+
+为了便于表述，在本题之后的推导中，所有不加额外说明的求偏导默认对于Euler坐标系中的坐标进行，
+对于Language坐标系中的坐标求偏导时，会进行额外说明，
+例如$(\frac{\partial A}{\partial t})_{\xi^\alpha}$
+表示物理量$A$在Language坐标系中对时间$t$求偏导。
+
+对于速度和加速度，我们已经知道有
+$$
+\vec v = v^i\vec{e_i}
+$$
+\noindent 于是根据加速度的定义有
+\begin{align*}
+\vec a &= \frac{d\vec v}{dt} = (\frac{\partial \vec v}{\partial t})_{\xi^\alpha}
+=(\frac {\partial (v^i \vec e_i)}{\partial t})_{\xi^\alpha}\\
+&=(\frac{\partial v^i}{\partial t})_{\xi^\alpha} \vec e_i+
+v^i (\frac{\partial \vec e_i}{\partial t})_{\xi^\alpha}\\
+&=\frac {dv^i}{dt} \vec e_i
++v^i(
+    \frac{\partial \vec e_i}{\partial t}
+    +\frac{\partial \vec e_i}{\partial x^j} (\frac{\partial x^j}{\partial t})_{\xi^\alpha}
+    )
+\end{align*}
+\noindent 由于Euler坐标系是静止的，故$\frac{\partial \vec e_i}{\partial t}=0$，
+且注意到
+$$
+\frac{\partial \vec e_i}{\partial x_j}=\Gamma_{ij}^k \vec e_k,
+(\frac{\partial x^j}{\partial t})_{\xi^\alpha}=v^j
+$$
+\noindent 于是有
+$$
+\vec a = \frac {dv^i}{dt} \vec e_i + v^i v^j \Gamma_{ij}^k \vec e_k
+$$
+\noindent 故得到
+\begin{equation}
+a^k=\frac {dv^k}{dt} + v^i v^j \Gamma_{ij}^k
+\tag{1}
+\end{equation}
+
+对于应变张量和应变率张量，根据应变率张量的定义即有
+\begin{equation}
+e^{ij}=(\frac{\partial \epsilon^{ij}}{\partial t})_{\xi^\alpha}=\frac{d\epsilon^{ij}}{dt}
+\tag{2}
+\end{equation}
+
+\section{第二题}
+
+接下来的讨论都在Euler观点下进行，记A,B,C三种物质的密度场为
+$\rho_A,\rho_B,\rho_C$，速度场记为$\vec v_A,\vec v_B,\vec v_C$，
+单位时间单位体积内A反应的质量记为$X$，则B反应的质量则可记为$2X$，
+生成的$C$的质量则可记为$X$，则有
+\noindent 对于Euler坐标下的固定体积$V$，有
+$$
+\frac{d}{dt}\int_V (\rho_A+\rho_B+\rho_C) dV
++\int_{\partial V} (\rho_A \vec v_A+\rho_B \vec v_B+\rho_C \vec v_C) \cdot d\vec\sigma=0
+$$
+\noindent 应用Gauss积分公式，并且考虑到体积$V$的任意性即得
+\begin{equation}
+\frac {\partial (\rho_A+\rho_B+\rho_C)}{\partial t}
++\nabla \cdot (\rho_A \vec v_A+\rho_B \vec v_B+\rho_C \vec v_C)
+=0
+\tag{1}
+\end{equation}
+\noindent 那么对于物质A可以列出
+$$
+\frac{d}{dt} \int_V \rho_A dV
++\int_{\partial V} \rho_A \vec v_A \cdot d\vec\sigma
++\int_V X dV
+=0
+$$
+\noindent 应用Gauss公式，并且考虑到体积V的任意性即得
+$$
+\frac{\partial \rho_A}{\partial t} + \nabla \cdot (\rho_A \vec v_A) = -X
+$$
+\noindent 同理对B可得
+$$
+\frac{\partial \rho_B}{\partial t} + \nabla \cdot (\rho_B \vec v_B) = -2X
+$$
+\noindent 对于C则有
+$$
+\frac{\partial \rho_C}{\partial t} + \nabla \cdot (\rho_C \vec v_C) = 3X
+$$
+\noindent 可以看到与总的质量守恒方程式(1)自洽的。另外值得说明的是，
+这里引入了一个新的场函数$X$，用以描述空间中化学反应进行的情况。从化学反应的角度考虑，$X$可以是
+由$\rho_A,\rho_B,\rho_C,\vec v_A,\vec v_B,\vec v_C$以及温度等场函数共同决定的函数。
+
+\section{第三题}
+
+记模型中的一维坐标为$x$,引入沿$x$坐标方向的应力$p(x)$，由于一维模型，
+可以认为质量力也只有沿着$x$坐标方向的分量，记为$F(x)$，截面面积大小记为$A(x)$，
+则在$x$和$x+\Delta x$取各取一个截面，和管道围成一个体积$V$，利用方程
+$$
+\int_V \frac{d\vec v}{dt} \rho dV = \int_V \vec F \rho dV + \int_{\partial V} \vec p \cdot d\vec \sigma
+$$
+$$
+\Rightarrow
+\int_V \frac{d\vec v}{dt} \rho A dx = \int_V \vec F \rho A dx + \int_{\partial V} \vec p \cdot d\vec \sigma
+$$
+\noindent 并且用到积分的中值定理，可以得到
+$$
+\dot v(\xi) \rho(\xi) A(\xi) \Delta x = F(\eta ) \rho(\eta) A(\eta) \Delta x + (-p(x+\Delta x)A(x+\Delta x)+p(x)A(x))
+$$
+\noindent 其中$\xi,\eta$是$x$和$x+\Delta x$之间的某两个点，上式两边除以$\Delta x$并令$\Delta x\rightarrow 0$即得
+\begin{equation}
+\rho A \dot v=\rho A F - \frac{d(pA)}{dx} \tag{1}
+\end{equation}
+\end{document}
