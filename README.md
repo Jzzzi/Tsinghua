@@ -1,3 +1,3 @@
-# Tsinghua
+# Tsinghua清华
 
-It's a repository for projects in Tsinghua University.
+这里将会上传一些我在清华学习时需要的资料。
