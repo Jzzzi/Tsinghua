@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.19)  9 DEC 2023 23:15
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.19)  10 DEC 2023 20:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -443,14 +443,14 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 18.
  [1
 
-] (./作业六.aux) ) 
+] [2] (./作业六.aux) ) 
 Here is how much of TeX's memory you used:
- 9379 strings out of 476683
- 246222 string characters out of 5807574
- 1852012 words of memory out of 5000000
- 29488 multiletter control sequences out of 15000+600000
- 549153 words of font info for 92 fonts, out of 8000000 for 9000
+ 9457 strings out of 476683
+ 251365 string characters out of 5807574
+ 1868012 words of memory out of 5000000
+ 29564 multiletter control sequences out of 15000+600000
+ 549161 words of font info for 93 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,9n,97p,358b,275s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 作业六.pdf (1 page).
+Output written on 作业六.pdf (2 pages).
