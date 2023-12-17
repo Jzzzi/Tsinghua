@@ -19,6 +19,24 @@
 \section{第一题}
 
 \section{第二题}
+抱歉，我坚持认为存在关系
+\begin{equation*}
+    \frac{d \epsilon_{ij}}{dt}=e_{ij}  
+\end{equation*}
+我可以证明如下，
+\begin{align*}
+    e_{ij}&=(\frac{\partial \epsilon_{ij}}{\partial t})_{\xi^\alpha,t}\\
+    &=(\frac{\partial \epsilon_{ij}}{\partial t})_{x^\alpha,t}
+    +(\frac{\partial \epsilon_{ij}}{\partial x^i})_{x^\alpha,t}(\frac{\partial x^i}{\partial t})_{\xi^\alpha,t}
+\end{align*}
+其中括号后的下标表示求偏导时哪些是构成函数关系的变量，这完全就是数学上的复合映射的求导法则。且注意到
+$(\frac{\partial x^i}{\partial t})_{\xi^\alpha,t}$就是$v_i$，因此上式完全就是物质导数的定义。
+
+因此我认为
+\begin{equation*}
+    \frac{d \epsilon_{ij}}{dt}=e_{ij}  
+\end{equation*}
+一定成立。
 
 \section{第三题}
 

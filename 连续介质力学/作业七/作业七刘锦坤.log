@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.19)  17 DEC 2023 22:40
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.19)  17 DEC 2023 23:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -436,16 +436,16 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.53937> on input line 26.
+(Font)              <10.53937> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 26.
+(Font)              <7> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 26.
+(Font)              <5> on input line 23.
  [1
 
 ]
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 93.
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 111.
  [2] (./作业七刘锦坤.aux) ) 
 Here is how much of TeX's memory you used:
  9364 strings out of 476683
