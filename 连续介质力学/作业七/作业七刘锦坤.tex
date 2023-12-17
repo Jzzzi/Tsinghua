@@ -1,0 +1,93 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cases}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\geometry{a4paper}
+\usepackage{lmodern}%处理字体问题
+
+\title{连续介质力学作业七}
+\author{刘锦坤\\2022013352}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{第一题}
+
+\section{第二题}
+
+\section{第三题}
+
+先证明平均方向应力公式，即
+\begin{equation*}
+    \lim_{a\to 0}\frac{1}{4\pi a^2}\int_{S_a} p_{nn} d\sigma
+    =\lim_{a\to 0}\frac{1}{4\pi a^2}\int_{S_a} \vec n \cdot \tilde P \cdot \vec n d\sigma
+    =\frac{1}{3}p^{i\cdot}_{\cdot i}
+    \notag
+\end{equation*}
+在考虑的空间点为原点，引入一个直角坐标系$oxyz$，且
+应力张量的三个主方向为$\vec e_x,\vec e_y,\vec e_z$，
+即在考虑的空间点处有
+\begin{equation*}
+    \tilde P=p_x \vec e_x \vec e_x + p_y \vec e_y \vec e_y + p_z \vec e_z \vec e_z
+\end{equation*}
+引入球坐标$\theta,\phi$进行积分计算，
+有$\vec n = sin\theta cos\phi \vec e_x+ sin\theta sin\phi \vec e_y +cos\theta \vec e_z$，
+带入得
+\begin{align*}
+    \lim_{a\to 0}\frac{1}{4\pi a^2}\int_{S_a} \vec n \cdot \tilde P \cdot \vec n d\sigma
+    &=\int_{S_a} \lim_{a\to 0}\frac{\vec n \cdot \tilde P \cdot \vec n}{4\pi a^2} d\sigma\\
+    &=\frac{1}{4\pi } \iint_{S_a} p_x sin^3\theta cos^2\phi + p_y sin^3\theta sin^2\phi + p_z sin\theta cos^2\theta d\theta d\phi\\
+    &=\frac{1}{4\pi } \int_{0}^{2\pi} d\phi \int_{0}^{\pi} p_x sin^3\theta cos^2\phi + p_y sin^3\theta sin^2\phi + p_z sin\theta cos^2\theta d\theta \\
+    &=\frac{p_x+p_y+p_z}{3}\\
+    &=\frac{1}{3}p^{i\cdot}_{\cdot i}
+\end{align*}
+然后带入
+\begin{equation*}
+    p^{ij}=-pg^{ij}+\tau ^{ij}
+    =-pg^{ij}+\lambda e^{\alpha\cdot}_{\cdot \alpha} g^{ij} +2 \mu e^{ij}
+\end{equation*}
+并且利用
+\begin{equation*}
+    tr(\tilde g)=3,\quad tr(\tilde e)=\nabla \cdot \vec v
+\end{equation*}
+即得
+\begin{equation*}
+    \lim_{a\to 0}\frac{1}{4\pi a^2}\int_{S_a} p_{nn} d\sigma
+    =\frac{1}{3}p^{i\cdot}_{\cdot i}=-p+(\lambda + \frac{2\mu}{3})\nabla \cdot \vec v
+\end{equation*}
+
+\section{第四题}
+
+接下来都在Euler观点下考虑。以下标表示各组分，组分$\alpha$的密度场记为$\rho_\alpha$，
+速度场记为$\vec v_\alpha$，应力张量设为$\tilde P_\alpha$，受的质量力为$\vec F_\alpha$。
+同时引入一个新的参量$\vec f_{\alpha\beta}$，
+表示单位体积内$\alpha$组分对$\beta$组分的作用力。
+那么取空间中固定的体积$V$，对于组分$\alpha$有
+\begin{equation}
+    \int_V \frac{\partial (\rho_\alpha\vec v_\alpha)}{\partial t} dV
+    =\int_V \sum_{\beta\neq\alpha} \vec f_{\beta\alpha} dV
+    +\int_V \rho_\alpha \vec F_\alpha dV
+    +\int_{\partial V} \vec n \cdot \sum_{\beta}\tilde P_\beta  d\sigma
+    +\int_{\partial V} (\vec n \cdot \vec v_\alpha) \rho_\alpha \vec v_\alpha d\sigma
+    \tag{1}
+\end{equation}
+\noindent 由于不考虑化学反应，所以可以带入质量守恒方程
+\begin{equation}
+    \frac{\partial \rho_\alpha}{\partial t}+\nabla\cdot(\rho_\alpha\vec v_\alpha)=0
+\end{equation}
+\noindent 并且注意到$V$的任意性即得
+\begin{equation}
+    \rho_\alpha \frac{d \vec v_\alpha}{d t}
+    -\sum_{\beta\neq\alpha} \vec f_{\beta\alpha}
+    -\rho_\alpha \vec F_\alpha
+    -\nabla\cdot\sum_\beta \tilde P_\beta
+    =0
+\end{equation}
+\noindent 这即为组分$\alpha$的动量守恒方程。
+
+\end{document}
