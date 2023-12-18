@@ -443,20 +443,116 @@ $$
 **注：这堂课我旷课了，参考程阳的笔记补上的**
 
 ## 粘性流体
+
 ### 各向同性线性黏性流体（牛顿流体）
-我们将忽略的切向应力重新考虑，那么（粘性）应力张量的分量化作$$p^{ij}=-pg^{ij}+\tau^{ij}(e_{\alpha\beta},T,g_{\alpha\beta},\cdots)$$同时有约束极限$$\lim_{e_{\alpha\beta}\to 0}\tau^{ij}=0$$粘性流体的一些约束方程，存在一些实验定律，例如$$\tau^{ij}=A^{ij\alpha\beta}e_{\alpha\beta}\quad \text{且} \quad \frac{\partial A^{ij\alpha\beta}}{\partial e_{\alpha\beta}}=0$$加上各向同性（旋转变化下分量不变）的性质，可知张量$\bm{A}$原本的 $81$ 个独立分量现在仅有两个。
-**注记.** 二阶各项同性张量必然为度量张量的倍数；三阶各项同性张量必然为置换张量的倍数。在此处的结果，我们考虑以下分量$$A^{ij\alpha\beta}=\lambda g^{ij}g^{\alpha\beta}+\mu(g^{i\alpha}g^{j\beta}+g^{j\alpha}g^{i\beta})+\nu(g^{i\alpha}g^{j\beta}-g^{j\alpha}g^{i\beta})$$由于此处应力张量的对称性，有$$\tau^{ij}=\lambda g^{ij}e^{\alpha\cdot}_{\cdot\alpha}+2\mu e^{ij}$$定义 $\mu$ 为（剪切）黏度，$\lambda$ 为体积黏度，$\bm{A}$为黏性系数张量。
-**我们来讲一点历史** ：第一个研究流体黏性的是牛顿，他将大面积平板放在牛顿流体上，施加水平力产生滑动，则有$$\frac{F}{S}=\tau=\mu\frac{\mathrm{d}u(y)}{\mathrm{d}y}$$为了纪念此人，故有牛顿流体的概念。
+
+我们将忽略的切向应力重新考虑，那么（粘性）应力张量的分量化作
+
+$$
+p^{ij}=-pg^{ij}+\tau^{ij}(e_{\alpha\beta},T,g_{\alpha\beta},\cdots)
+$$
+
+同时有约束极限
+
+$$
+\lim_{e_{\alpha\beta}\to 0}\tau^{ij}=0
+$$
+
+粘性流体的一些约束方程，存在一些实验定律，例如
+
+$$
+\tau^{ij}=A^{ij\alpha\beta}e_{\alpha\beta}\quad \text{且} \quad \frac{\partial A^{ij\alpha\beta}}{\partial e_{\alpha\beta}}=0
+$$
+
+加上各向同性（旋转变化下分量不变）的性质，可知张量$\bm{A}$原本的 $81$ 个独立分量现在仅有两个。
+**注记.** 二阶各项同性张量必然为度量张量的倍数；三阶各项同性张量必然为置换张量的倍数。在此处的结果，我们考虑以下分量
+
+$$
+A^{ij\alpha\beta}=\lambda g^{ij}g^{\alpha\beta}+\mu(g^{i\alpha}g^{j\beta}+g^{j\alpha}g^{i\beta})+\nu(g^{i\alpha}g^{j\beta}-g^{j\alpha}g^{i\beta})
+$$
+
+由于此处应力张量的对称性，有
+
+$$
+\tau^{ij}=\lambda g^{ij}e^{\alpha\cdot}_{\cdot\alpha}+2\mu e^{ij}
+$$
+
+定义 $\mu$ 为（剪切）黏度，$\lambda$ 为体积黏度，$\bm{A}$为黏性系数张量。
+**我们来讲一点历史** ：第一个研究流体黏性的是牛顿，他将大面积平板放在牛顿流体上，施加水平力产生滑动，则有
+
+$$
+\frac{F}{S}=\tau=\mu\frac{\mathrm{d}u(y)}{\mathrm{d}y}
+$$
+
+为了纪念此人，故有牛顿流体的概念。
 **讨论** ：
-* 均匀剪切流动：$u=u(y)$，则有$$\mu\frac{\mathrm{d}u}{\mathrm{d}y}=\tau^{12}=\tau^{21}$$
-* 先看平均法向应力： $$p_{nn\text{ave}}=\lim_{a\to 0}\frac{1}{4\pi a^2}\int_{\text{sphere}}p_{nn}\mathrm{d}\Sigma=\frac{P^{i\cdot}_{\cdot i}}{3}=-p+(\lambda+\frac{2\mu}{3})\nabla\cdot\bm{v}$$对于不可压缩流体，有$$p_{nn\text{ave}}=-p$$
-所以综上所述，这里这些 $p$ 已经失去了一般意义下压强的含义。注意到应变率张量的第一不变量为$$e^{i\cdot}_{\cdot i}=\nabla\cdot\bm{v}$$
-* 我们把牛顿流体的应力分量代入单位体积中内应力的功率：$$\frac{\delta W_{\Sigma}^{(i)}}{\mathrm{d}V\mathrm{d}t}=-p^{ij}e_{ij}=p\nabla\cdot\bm{v}-\lambda(\nabla\cdot\bm{v})^2-2\mu\bm{e}:\bm{e}=p\nabla\cdot \bm{v}-\Phi$$定义耗散函数$$\Phi=\lambda(\nabla\cdot\bm{v})^2+2\mu\bm{e}:\bm{e}$$但是更本质的写法应当是$$\Phi=\big(\lambda+\frac{2\mu}{3}\big)(\nabla\cdot\bm{v})^2+2\mu\big(\bm{e}:\bm{e}-\frac{(\nabla\cdot\bm{v})^2}{3}\big)$$**注意，可以证明上述第二项为非负数，且均匀膨胀时为0；事实上，前面那一项也一般为0（实验的结果，剪切黏度好测，连牛顿都可以测，但是第二黏度测量，有人靠这个吃饭，尤其是气体），定义 $\mu'=\lambda+\frac{2\mu}{3}$为第二黏度，理论上可以说明单原子分子气体的第二黏度为0** 
-**在温度极低的情况下，量子效应出现，$\mu=0$，为超流体（例如液氦的一种同位素）**
-那么此时动能定理可以写作$$\rho\frac{\mathrm{d}}{\mathrm{d}t}\frac{v^2}{2}=\rho\bm{F}\cdot\bm{v}+\nabla_i(p^{ij}v_j)+p\nabla\cdot\bm{v}-\Phi$$为了方便，我们经常称$p$为热力学压强，那么我们视作这一热力学压强的做功为体积功，那么右侧四项分别为：质量力做功，外面力做功，体积功与耗散（这部分耗散进入了一温度为标志的内能）。
-**问题：有限体积保温杯中有没有装满的水，问是否可能通过摇晃使之沸腾。**
-**注记：两个黏度均为正，联系热力学第二定律可以逐个说明其大于0**
+
+* 均匀剪切流动：$u=u(y)$，则有
+
+  $$
+  \mu\frac{\mathrm{d}u}{\mathrm{d}y}=\tau^{12}=\tau^{21}
+  $$
+* 先看平均法向应力：
+
+  $$
+  p_{nn\text{ave}}=\lim_{a\to 0}\frac{1}{4\pi a^2}\int_{\text{sphere}}p_{nn}\mathrm{d}\Sigma=\frac{P^{i\cdot}_{\cdot i}}{3}=-p+(\lambda+\frac{2\mu}{3})\nabla\cdot\bm{v}
+  $$
+
+  对于不可压缩流体，有
+
+  $$
+  p_{nn\text{ave}}=-p
+  $$
+
+  所以综上所述，这里这些 $p$ 已经失去了一般意义下压强的含义。注意到应变率张量的第一不变量为
+
+  $$
+  e^{i\cdot}_{\cdot i}=\nabla\cdot\bm{v}
+  $$
+* 我们把牛顿流体的应力分量代入单位体积中内应力的功率：
+
+  $$
+  \frac{\delta W_{\Sigma}^{(i)}}{\mathrm{d}V\mathrm{d}t}=-p^{ij}e_{ij}=p\nabla\cdot\bm{v}-\lambda(\nabla\cdot\bm{v})^2-2\mu\bm{e}:\bm{e}=p\nabla\cdot \bm{v}-\Phi
+  $$
+
+  定义耗散函数
+
+  $$
+  \Phi=\lambda(\nabla\cdot\bm{v})^2+2\mu\bm{e}:\bm{e}
+  $$
+
+  但是更本质的写法应当是
+
+  $$
+  \Phi=\big(\lambda+\frac{2\mu}{3}\big)(\nabla\cdot\bm{v})^2+2\mu\big(\bm{e}:\bm{e}-\frac{(\nabla\cdot\bm{v})^2}{3}\big)
+  $$
+
+  **注意，可以证明上述第二项为非负数，且均匀膨胀时为0；事实上，前面那一项也一般为0（实验的结果，剪切黏度好测，连牛顿都可以测，但是第二黏度测量，有人靠这个吃饭，尤其是气体），定义 $\mu'=\lambda+\frac{2\mu}{3}$为第二黏度，理论上可以说明单原子分子气体的第二黏度为0**
+  **在温度极低的情况下，量子效应出现，$\mu=0$，为超流体（例如液氦的一种同位素）**
+  那么此时动能定理可以写作
+
+  $$
+  \rho\frac{\mathrm{d}}{\mathrm{d}t}\frac{v^2}{2}=\rho\bm{F}\cdot\bm{v}+\nabla_i(p^{ij}v_j)+p\nabla\cdot\bm{v}-\Phi
+  $$
+
+  为了方便，我们经常称$p$为热力学压强，那么我们视作这一热力学压强的做功为体积功，那么右侧四项分别为：质量力做功，外面力做功，体积功与耗散（这部分耗散进入了一温度为标志的内能）。
+  **问题：有限体积保温杯中有没有装满的水，问是否可能通过摇晃使之沸腾。**
+  **注记：两个黏度均为正，联系热力学第二定律可以逐个说明其大于0**
+
 ### 粘性流体的Navier-Stokes方程
-动量定理有$$\rho\frac{\mathrm{d}\bm{v}}{\mathrm{d}t}=\rho\bm{F}+\nabla\cdot\bm{P}$$根据上述说明，由条件：牛顿流体；$\mu,\lambda=\text{const}$，故可以得到动量定理的具体形式
-$$\rho\frac{\mathrm{d}\bm{v}}{\mathrm{d}t}=\rho\bm{F}-\nabla p+(\lambda+\mu)\nabla\nabla\cdot\bm{v}+\mu\Delta\bm{v}\\\text{or}\Rightarrow\quad\rho\frac{\mathrm{d}\bm{v}}{\mathrm{d}t}=\rho\bm{F}-\nabla p+(\frac{\mu}{3}+\mu')\nabla\nabla\cdot\bm{v}+\mu\Delta\bm{v}$$ **注记：如果黏度与温度有关，上述方程会有温度的梯度项，这一点值得注意**
+
+动量定理有
+
+$$
+\rho\frac{\mathrm{d}\bm{v}}{\mathrm{d}t}=\rho\bm{F}+\nabla\cdot\bm{P}
+$$
+
+根据上述说明，由条件：牛顿流体；$\mu,\lambda=\text{const}$，故可以得到动量定理的具体形式
+
+$$
+\rho\frac{\mathrm{d}\bm{v}}{\mathrm{d}t}=\rho\bm{F}-\nabla p+(\lambda+\mu)\nabla\nabla\cdot\bm{v}+\mu\Delta\bm{v}\\\text{or}\Rightarrow\quad\rho\frac{\mathrm{d}\bm{v}}{\mathrm{d}t}=\rho\bm{F}-\nabla p+(\frac{\mu}{3}+\mu')\nabla\nabla\cdot\bm{v}+\mu\Delta\bm{v}
+$$
+
+**注记：如果黏度与温度有关，上述方程会有温度的梯度项，这一点值得注意**
 方程的边界条件为牛顿黏附条件（固液同速，实验给出，事实上理论可以推导）
+
