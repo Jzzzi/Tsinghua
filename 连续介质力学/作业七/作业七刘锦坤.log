@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.19)  17 DEC 2023 23:53
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.19)  18 DEC 2023 10:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -436,22 +436,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.53937> on input line 23.
+(Font)              <10.53937> on input line 21.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 23.
+(Font)              <7> on input line 21.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 23.
+(Font)              <5> on input line 21.
  [1
 
 ]
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 111.
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 136.
  [2] (./作业七刘锦坤.aux) ) 
 Here is how much of TeX's memory you used:
- 9364 strings out of 476683
- 245699 string characters out of 5807574
- 1858012 words of memory out of 5000000
- 29475 multiletter control sequences out of 15000+600000
+ 9376 strings out of 476683
+ 246499 string characters out of 5807574
+ 1864012 words of memory out of 5000000
+ 29487 multiletter control sequences out of 15000+600000
  538404 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,10n,97p,361b,275s stack positions out of 10000i,1000n,20000p,200000b,200000s
